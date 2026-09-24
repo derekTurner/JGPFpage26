@@ -1,0 +1,53 @@
+.dashboard-container {
+    display: grid;
+    gap: 1.25rem;
+
+    /* GRID-TEMPLATE-AREAS DEFINITION */
+    grid-template-areas:
+        "header  header  header"
+        "sidebar stats   stats"
+        "sidebar chart   activity"
+        "sidebar chart   activity";
+
+    grid-template-columns: 240px 1fr 340px;
+    grid-template-rows: auto auto 1fr;
+}
+
+/* Mapping Elements to Grid Areas */
+.app-header {
+    grid-area: header;
+    background-color: #f5f5f5;
+}
+
+.app-sidebar {
+    grid-area: sidebar;
+    background-color: #f5f5f5;
+}
+
+.stats-group {
+    grid-area: stats;
+    background-color: #f5f5f5;
+}
+
+.chart-section {
+    grid-area: chart;
+    background-color: #f5f5f5;
+}
+
+.activity-feed {
+    grid-area: activity;
+    background-color: #f5f5f5;
+}
+
+/* Responsive Mobile Layout Override */
+@media (max-width: 1024px) {
+    .dashboard-container {
+        grid-template-areas:
+            "header"
+            "stats"
+            "chart"
+            "activity"
+            "sidebar";
+        grid-template-columns: 1fr;
+    }
+}
